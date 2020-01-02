@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "884709929324",
+    "firebase_url": "https://staddle-vendor.firebaseio.com",
+    "project_id": "staddle-vendor",
+    "storage_bucket": "staddle-vendor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884709929324:android:9e149013ea92b9cc",
+        "android_client_info": {
+          "package_name": "staddlevendor.com.staddlevendor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884709929324-2c5fugqh8cparsmetqsqgajvkiu8iq7c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "staddlevendor.com.staddlevendor",
+            "certificate_hash": "9378bbf980225e9513f760d2b41b6a1578e750e7"
+          }
+        },
+        {
+          "client_id": "884709929324-pm3mvd5stikdotm74jrj1fr8vdo3p9ns.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "staddlevendor.com.staddlevendor",
+            "certificate_hash": "a547abb839a384709f10ee23b845ba8caaab78fc"
+          }
+        },
+        {
+          "client_id": "884709929324-7322ee7r7n4d2blb4ib18spklovloaak.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEY_wVbIbQYk36lkir3CNu9U7eHGKoX9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884709929324-7322ee7r7n4d2blb4ib18spklovloaak.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="@dimen/margin_2"
+    android:layout_marginBottom="@dimen/margin_2">
+
+   <android.support.v7.widget.CardView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:cardBackgroundColor="#FFFFFF"
+       app:cardElevation="2dp"
+       app:cardUseCompatPadding="true"
+       app:cardCornerRadius="2dp">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical">
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="15dp"
+               android:layout_marginEnd="15dp"
+               android:layout_marginTop="15dp">
+               <TextView
+                   android:id="@+id/order_id"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/mainboldfont"
+                   android:textColor="#000000"
+                   android:textSize="15dp"
+                   android:text="#OR7527537"
+
+                   />
+               <TextView
+                   android:id="@+id/from_user"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/mainthinfont"
+                   android:text="From Ashok"
+                   android:textSize="13dp"
+                   android:layout_marginTop="5dp"
+                   android:textColor="@color/app_color_2"
+                   android:layout_below="@+id/order_id"/>
+               <TextView
+                   android:id="@+id/order_time"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/mainthinfont"
+                   android:text="Today 11.37 PM"
+                   android:textSize="13dp"
+
+                   android:layout_alignParentEnd="true" />
+           </RelativeLayout>
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="15dp"
+               android:layout_marginEnd="15dp"
+               android:layout_marginBottom="10dp"
+               android:layout_marginTop="15dp">
+
+               <TextView
+                   android:id="@+id/itemsx"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textColor="#2a6eb4"
+                   android:text="2 X Item"
+                   android:textStyle="bold"
+                   android:textSize="15dp"
+                   android:fontFamily="@font/mainthinfont"
+                   />
+               <TextView
+                   android:id="@+id/schedule_details"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="24 Dec 2019 | 11:00 AM"
+                   android:textStyle="normal"
+                   android:textSize="13dp"
+                   android:textColor="#000000"
+                   android:layout_marginTop="5dp"
+                   android:layout_below="@+id/itemsx"
+                   android:fontFamily="@font/mainthinfont"
+                   />
+               <TextView
+                   android:id="@+id/payment_mode"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="on Cash"
+                   android:textStyle="normal"
+                   android:textColor="#000000"
+                   android:textSize="13dp"
+                   android:layout_marginTop="5dp"
+                   android:layout_below="@+id/schedule_details"
+                   android:fontFamily="@font/mainthinfont"
+                   />
+               <TextView
+                   android:id="@+id/order_total"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textColor="#000000"
+                   android:text="Amount :  560.98₹"
+                   android:textStyle="bold"
+                   android:textSize="15dp"
+                   android:layout_marginTop="10dp"
+                   android:layout_below="@+id/payment_mode"
+                   android:fontFamily="@font/mainthinfont"
+                   />
+           </RelativeLayout>
+
+
+       </LinearLayout>
+
+   </android.support.v7.widget.CardView>
+</RelativeLayout>

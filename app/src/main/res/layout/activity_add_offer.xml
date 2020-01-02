@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".activity.AddOfferActivity">
+
+    <RelativeLayout
+        android:id="@+id/rel_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_add_offer_bg"
+        android:padding="@dimen/padding_10">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_vector_back"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/margin_5"
+            android:layout_toEndOf="@id/iv_back"
+            android:text="@string/add_offers"
+            android:textColor="@color/white"
+            android:textSize="@dimen/app_txt_size" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/rl_offer_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:background="@drawable/my_order_bg_shap"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_5">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/shape_rounded">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/iv_profile"
+                        android:layout_width="170dp"
+                        android:layout_height="170dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        app:riv_border_color="@android:color/white"
+                        app:riv_border_width="2dp"
+                        app:riv_corner_radius="15dp" />
+
+                    <ImageView
+                        android:id="@+id/iv_camera"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignEnd="@+id/iv_profile"
+                        android:layout_alignBottom="@+id/iv_profile"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_vector_camera"
+                        tools:ignore="ContentDescription" />
+                </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/edt_offer_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:layout_marginEnd="@dimen/margin_5"
+                    android:background="@drawable/shape_order_out_line"
+                    android:hint="@string/offer_name"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:padding="@dimen/padding_10"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/txt_size_18" />
+
+
+
+                <RelativeLayout
+                    android:id="@+id/rel_sub_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginEnd="@dimen/margin_5"
+                    android:background="@drawable/shape_order_out_line">
+
+                    <TextView
+                        android:id="@+id/tv_sub_category"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_10"
+                        android:hint="Category"
+                        android:padding="@dimen/padding_10"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="@dimen/txt_size_18" />
+
+                    <ImageView
+                        android:id="@+id/iv_sub_category_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="10dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_vector_circle_left_arrow"
+                        tools:ignore="ContentDescription" />
+
+                </RelativeLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_sub_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_15"
+                    android:layout_marginEnd="@dimen/margin_15"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:background="@drawable/shape_expand_drawer_bg"
+                    android:visibility="gone">
+
+                </android.support.v7.widget.RecyclerView>
+
+                <RelativeLayout
+                    android:id="@+id/rel_sub_categorytree"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginEnd="@dimen/margin_5"
+                    android:background="@drawable/shape_order_out_line">
+
+                    <TextView
+                        android:id="@+id/tv_sub_category_tree"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_10"
+                        android:hint="Sub Category"
+                        android:padding="@dimen/padding_10"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="@dimen/txt_size_18" />
+
+                    <ImageView
+                        android:id="@+id/iv_sub_category_tree_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="10dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_vector_circle_left_arrow"
+                        tools:ignore="ContentDescription" />
+
+                </RelativeLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_sub_category_tree"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_15"
+                    android:layout_marginEnd="@dimen/margin_15"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:background="@drawable/shape_expand_drawer_bg"
+                    android:visibility="gone">
+
+                </android.support.v7.widget.RecyclerView>
+
+                <LinearLayout
+                    android:id="@+id/ll_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginEnd="@dimen/margin_5"
+                    android:background="@drawable/shape_order_out_line"
+                    android:padding="@dimen/padding_10">
+
+                    <EditText
+                        android:id="@+id/tv_detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:background="@null"
+                        android:gravity="top"
+                        android:hint="@string/details"
+                        android:imeOptions="actionDone"
+                        android:inputType="textMultiLine"
+                        android:textColor="@android:color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="@dimen/txt_size_18" />
+                </LinearLayout>
+
+                <RadioGroup
+                    android:id="@+id/toggle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:layout_marginEnd="@dimen/margin_5"
+                    android:background="@drawable/shape_order_out_line"
+                    android:checkedButton="@+id/offer"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radiofromDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/toggle_widget_background"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:padding="@dimen/padding_7"
+                        android:text="@string/from"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/txt_size_18" />
+
+                    <RadioButton
+                        android:id="@+id/radioToDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/toggle_widget_background"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:padding="@dimen/padding_7"
+                        android:text="@string/to"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/txt_size_18" />
+                </RadioGroup>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_7"
+                    android:layout_marginEnd="@dimen/margin_7"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <EditText
+                        android:id="@+id/edt_current_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_weight="0.8"
+                        android:background="@drawable/shape_order_out_line"
+                        android:hint="@string/current_price"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:padding="@dimen/padding_10"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="@dimen/txt_size_18" />
+
+                    <EditText
+                        android:id="@+id/edt_offer_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_10"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_weight="1.1"
+                        android:background="@drawable/shape_order_out_line"
+                        android:hint="Offer Price"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:padding="@dimen/padding_10"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="@dimen/txt_size_18" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_add_offer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:background="@drawable/ordered_shap"
+                    android:padding="@dimen/padding_7">
+
+                    <TextView
+                        android:id="@+id/tv_add_offer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_15"
+                        android:layout_marginEnd="@dimen/margin_15"
+                        android:text="@string/add_offer"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/btn_txt_size" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

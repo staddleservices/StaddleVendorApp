@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/rel_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/shape_add_offer_bg"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:weightSum="2">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_vector_back"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_weight="1.8"
+            android:text="Wallet"
+            android:textColor="#265A90"
+            android:textSize="28sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:background="@drawable/ordered_shap"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/tv_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Rs.150"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="370dp"
+        android:layout_marginEnd="@dimen/margin_20"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_20"
+        android:background="@drawable/my_order_bg_shap">
+
+        <LinearLayout
+            android:id="@+id/ll_client1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_5"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tv_client1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_weight="1.5"
+                android:background="@drawable/shape_order_out_line"
+                android:padding="@dimen/padding_7"
+                android:text="@string/total_cod"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/txt_size_18" />
+
+            <TextView
+                android:id="@+id/tv_amt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_5"
+                android:layout_marginStart="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_weight="0.5"
+                android:background="@drawable/ordered_shap"
+                android:gravity="center"
+                android:padding="@dimen/padding_7"
+                android:text="@string/amt"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/txt_size_18" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_client2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_client1"
+            android:layout_marginStart="@dimen/padding_5"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tv_client2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_weight="1.5"
+                android:background="@drawable/shape_order_out_line"
+                android:padding="@dimen/padding_7"
+                android:text="@string/total_pay"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/txt_size_18" />
+
+            <TextView
+                android:id="@+id/tv_amt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_5"
+                android:layout_marginStart="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_weight="0.5"
+                android:background="@drawable/ordered_shap"
+                android:gravity="center"
+                android:padding="@dimen/padding_7"
+                android:text="@string/amt"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/txt_size_18" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

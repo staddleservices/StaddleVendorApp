@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".activity.ProfileActivity">
+
+    <RelativeLayout
+        android:id="@+id/rel_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_add_offer_bg"
+        android:padding="@dimen/padding_10">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_vector_back"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_action_bar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/iv_back"
+            android:text="Change Image"
+            android:textColor="@color/white"
+            android:textSize="@dimen/app_txt_size" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="false"
+        android:focusable="false"
+        android:padding="@dimen/margin_10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Business Image"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:gravity="center_horizontal"
+                android:text="Image 1"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_line">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/imgOne"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    app:riv_border_color="@android:color/white"
+                    app:riv_border_width="2dp"
+                    app:riv_corner_radius="15dp" />
+
+                <ImageView
+                    android:id="@+id/imgCamera1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/imgOne"
+                    android:layout_alignBottom="@+id/imgOne"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_vector_camera"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:gravity="center_horizontal"
+                android:text="Image 2"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_line">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/imgTwo"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    app:riv_border_color="@android:color/white"
+                    app:riv_border_width="2dp"
+                    app:riv_corner_radius="15dp" />
+
+                <ImageView
+                    android:id="@+id/imgCamera2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/imgTwo"
+                    android:layout_alignBottom="@+id/imgTwo"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_vector_camera"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:gravity="center_horizontal"
+                android:text="Image 3"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_line">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/imgThree"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    app:riv_border_color="@android:color/white"
+                    app:riv_border_width="2dp"
+                    app:riv_corner_radius="15dp" />
+
+                <ImageView
+                    android:id="@+id/imgCamera3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/imgThree"
+                    android:layout_alignBottom="@+id/imgThree"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_vector_camera"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:gravity="center_horizontal"
+                android:text="Image 4"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_line">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/imgFour"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    app:riv_border_color="@android:color/white"
+                    app:riv_border_width="2dp"
+                    app:riv_corner_radius="15dp" />
+
+                <ImageView
+                    android:id="@+id/imgCamera4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/imgFour"
+                    android:layout_alignBottom="@+id/imgFour"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_vector_camera"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:gravity="center_horizontal"
+                android:text="Image 5"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_line">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/imgFive"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    app:riv_border_color="@android:color/white"
+                    app:riv_border_width="2dp"
+                    app:riv_corner_radius="15dp" />
+
+                <ImageView
+                    android:id="@+id/imgCamera5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/imgFive"
+                    android:layout_alignBottom="@+id/imgFive"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_vector_camera"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:text="Document Upload"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_line"
+                android:visibility="gone">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/imgDocument"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    app:riv_border_color="@android:color/white"
+                    app:riv_border_width="2dp"
+                    app:riv_corner_radius="15dp" />
+
+                <ImageView
+                    android:id="@+id/imgCamera6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/imgDocument"
+                    android:layout_alignBottom="@+id/imgDocument"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_vector_camera"
+                    tools:ignore="ContentDescription" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:gravity="center_horizontal"
+                android:text="GST Certificate File"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_line">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/imgGst"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    app:riv_border_color="@android:color/white"
+                    app:riv_border_width="2dp"
+                    app:riv_corner_radius="15dp" />
+
+                <ImageView
+                    android:id="@+id/imgCamera7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/imgGst"
+                    android:layout_alignBottom="@+id/imgGst"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_vector_camera"
+                    tools:ignore="ContentDescription" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:gravity="center_horizontal"
+                android:text="PAN Card File"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_line">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/imgPanCard"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    app:riv_border_color="@android:color/white"
+                    app:riv_border_width="2dp"
+                    app:riv_corner_radius="15dp" />
+
+                <ImageView
+                    android:id="@+id/imgCamera8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/imgPanCard"
+                    android:layout_alignBottom="@+id/imgPanCard"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_vector_camera"
+                    tools:ignore="ContentDescription" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:gravity="center_horizontal"
+                android:text="Work Certificate File"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_line">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/imgWork"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    app:riv_border_color="@android:color/white"
+                    app:riv_border_width="2dp"
+                    app:riv_corner_radius="15dp" />
+
+                <ImageView
+                    android:id="@+id/imgCamera9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/imgWork"
+                    android:layout_alignBottom="@+id/imgWork"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_vector_camera"
+                    tools:ignore="ContentDescription" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:gravity="center_horizontal"
+                android:text="Aadhar Card File"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_line">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/imgAadhar"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    app:riv_border_color="@android:color/white"
+                    app:riv_border_width="2dp"
+                    app:riv_corner_radius="15dp" />
+
+                <ImageView
+                    android:id="@+id/imgCamera10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/imgAadhar"
+                    android:layout_alignBottom="@+id/imgAadhar"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_vector_camera"
+                    tools:ignore="ContentDescription" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

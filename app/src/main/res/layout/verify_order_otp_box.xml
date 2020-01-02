@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/dialogboxorderplaced"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="5dp"
+
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/dialogboxcardviewtag"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/verifytheorder"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/cnameheading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/dialogboxcardviewtag"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/tag1"
+                        android:layout_width="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mainthinfont"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:text="Please verify the order by entering the OTP"
+                        android:textSize="15dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/order_id_show_verify"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#OR6786"
+                        android:fontFamily="@font/mainboldfont"
+                        android:textColor="@color/app_color_2"
+                        android:layout_below="@+id/tag1"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerHorizontal="true"/>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/order_id_show_verify"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp">
+                        <com.goodiebag.pinview.Pinview
+                            android:id="@+id/verify_order_otp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            app:pinWidth="40dp"
+                            app:pinHeight="40dp"
+                            app:pinLength="4"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="10dp"
+                            app:cursorVisible="false"
+                            app:forceKeyboard="true"
+
+                            app:inputType="number"
+                            app:password="true"/>
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cnameheading"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp">
+
+
+
+                    <Button
+                        android:id="@+id/verify_order_btn"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pinview"
+                        android:textColor="#FFFFFF"
+                        android:background="@drawable/loginscreenmobile"
+                        android:fontFamily="@font/mainboldfont"
+                        android:text="Verify"
+                        android:textSize="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="30dp"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>
