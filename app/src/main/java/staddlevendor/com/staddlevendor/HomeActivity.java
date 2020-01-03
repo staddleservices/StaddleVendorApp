@@ -47,6 +47,7 @@ import staddlevendor.com.staddlevendor.activity.PolicyActivity;
 
 import staddlevendor.com.staddlevendor.bean.GetVendorInfoModel;
 import staddlevendor.com.staddlevendor.fragment.AcceptedOrderFragment;
+import staddlevendor.com.staddlevendor.fragment.CompleteOrderFragment;
 import staddlevendor.com.staddlevendor.fragment.HomeFragment;
 import staddlevendor.com.staddlevendor.activity.LoginActivity;
 import staddlevendor.com.staddlevendor.fragment.MenuFragment;
@@ -315,7 +316,7 @@ public class HomeActivity extends AppCompatActivity implements
                     fragment = new AcceptedOrderFragment();
                     break;
                 case R.id.navigation_notification:
-                    fragment = new NotificationFragment();
+                    fragment = new CompleteOrderFragment();
                     break;
                 case R.id.navigation_wallet:
                     fragment = new WalletFragment();

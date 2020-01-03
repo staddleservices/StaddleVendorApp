@@ -2,10 +2,7 @@ package staddlevendor.com.staddlevendor.retrofitApi;
 
 import com.google.gson.JsonElement;
 
-import java.util.Map;
-
 import retrofit2.Call;
-import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -13,6 +10,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 import staddlevendor.com.staddlevendor.ResponseClasses.AcceptedResponse;
 import staddlevendor.com.staddlevendor.ResponseClasses.AddOfferResponse;
+import staddlevendor.com.staddlevendor.ResponseClasses.CompletedOrdersResponse;
 import staddlevendor.com.staddlevendor.ResponseClasses.GetCategoryListResponse;
 import staddlevendor.com.staddlevendor.ResponseClasses.GetSubCategoryListResponse;
 import staddlevendor.com.staddlevendor.ResponseClasses.GetSubCategoryTreeListResponse;
@@ -101,7 +99,9 @@ public interface ApiInterface {
     Call<JsonElement> completeOrder(@Query("id") String id,
                                     @Query("items") String items,
                                     @Query("vname") String vname,
-                                    @Query("user_mobile") String user_mobile);
+                                    @Query("user_mobile") String user_mobile,
+                                    @Query("uid") String uid,
+                                    @Query("vid") String vid);
 
     @GET("edit_vender_starttime_endtime.php")
     Call<JsonElement> updateTime(@Query("vid") String vid,
@@ -221,7 +221,7 @@ public interface ApiInterface {
     Call<JsonElement> updateProductSatusRejected(@Query("id") String id);
 
     @GET(EndApi.GET_OFFER_COMPLETED_LIST)
-    Call<PendingListResponse> getCompletedList(@Query("vid") String vid);
+    Call<CompletedOrdersResponse> getCompletedList(@Query("vid") String vid);
 
     @GET(EndApi.GET_ONGOING_OFFER_LIST)
     Call<OnGoingOfferListResponse> getOnGoingOfferList(@Query("vid") String vid);

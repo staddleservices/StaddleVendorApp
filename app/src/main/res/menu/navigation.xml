@@ -3,23 +3,23 @@
     >
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_vector_home"
+        android:icon="@drawable/new_order_ic"
         android:title="New Orders"
         android:enabled="true"/>
     <item
         android:id="@+id/navigation_select"
-        android:icon="@drawable/ic_select"
-        android:title="Menu" />
+        android:icon="@drawable/accepted_orders_ic"
+        android:title="Accepted Orders" />
 
     <item
         android:id="@+id/navigation_notification"
-        android:icon="@drawable/ic_notifications"
-        android:title="Notification" />
+        android:icon="@drawable/delivered_order"
+        android:title="Delivered" />
 
     <item
         android:id="@+id/navigation_wallet"
-        android:icon="@drawable/wallet"
-        android:title="Wallet" />
+        android:icon="@drawable/vendor_managment_ic"
+        android:title="Management" />
 
 
 </menu>

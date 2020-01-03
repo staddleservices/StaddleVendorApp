@@ -67,63 +67,63 @@ public class OfferCompletedListActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         if (CheckNetwork.isNetworkAvailable(OfferCompletedListActivity.this)) {
-            completedList(vid);
+           // completedList(vid);
         } else {
             Toast.makeText(OfferCompletedListActivity.this, "Check your internet connection !", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void completedList(String vid) {
-        final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setCancelable(false); // set cancelable to false
-        progressDialog.setMessage("Please Wait..."); // set message
-        progressDialog.show();
-        apiInterface = ApiClient.getClient().create(ApiInterface.class);
-
-        Call<PendingListResponse> call = apiInterface.getCompletedList(vid);
-
-        call.enqueue(new Callback<PendingListResponse>() {
-            @Override
-            public void onResponse(@NonNull Call<PendingListResponse> call, @NonNull Response<PendingListResponse> response) {
-                progressDialog.dismiss();
-                try {
-                    if (response.isSuccessful()) {
-                        pendingListModelArrayList.clear();
-                        PendingListResponse pendingListResponse = response.body();
-                        if (pendingListResponse != null) {
-                            String status = pendingListResponse.getStatus();
-                            if (status.equalsIgnoreCase("1")) {
-                                pendingListModelArrayList = pendingListResponse.getInfo();
-
-                                if (pendingListModelArrayList != null) {
-                                    RejectedListAdapter rejectedListAdapter = new RejectedListAdapter(OfferCompletedListActivity.this, pendingListModelArrayList,"Complete");
-                                    rvCompletedList.setAdapter(rejectedListAdapter);
-                                    rvCompletedList.setHasFixedSize(true);
-                                    rejectedListAdapter.notifyDataSetChanged();
-                                } else {
-                                    Toast.makeText(OfferCompletedListActivity.this, "null ", Toast.LENGTH_SHORT).show();
-                                }
-                                rvCompletedList.setVisibility(View.VISIBLE);
-                                rl_no_offers.setVisibility(View.GONE);
-                            } else {
-                                Toast.makeText(OfferCompletedListActivity.this, pendingListResponse.getMessage(), Toast.LENGTH_SHORT).show();
-                                rvCompletedList.setVisibility(View.GONE);
-                                rl_no_offers.setVisibility(View.VISIBLE);
-                            }
-                        }
-                    } else {
-                        Toast.makeText(OfferCompletedListActivity.this, "Response Fail !!", Toast.LENGTH_SHORT).show();
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<PendingListResponse> call, Throwable t) {
-                progressDialog.dismiss();
-                Toast.makeText(OfferCompletedListActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
+//    private void completedList(String vid) {
+//        final ProgressDialog progressDialog = new ProgressDialog(this);
+//        progressDialog.setCancelable(false); // set cancelable to false
+//        progressDialog.setMessage("Please Wait..."); // set message
+//        progressDialog.show();
+//        apiInterface = ApiClient.getClient().create(ApiInterface.class);
+//
+//        Call<PendingListResponse> call = apiInterface.getCompletedList(vid);
+//
+//        call.enqueue(new Callback<PendingListResponse>() {
+//            @Override
+//            public void onResponse(@NonNull Call<PendingListResponse> call, @NonNull Response<PendingListResponse> response) {
+//                progressDialog.dismiss();
+//                try {
+//                    if (response.isSuccessful()) {
+//                        pendingListModelArrayList.clear();
+//                        PendingListResponse pendingListResponse = response.body();
+//                        if (pendingListResponse != null) {
+//                            String status = pendingListResponse.getStatus();
+//                            if (status.equalsIgnoreCase("1")) {
+//                                pendingListModelArrayList = pendingListResponse.getInfo();
+//
+//                                if (pendingListModelArrayList != null) {
+//                                    RejectedListAdapter rejectedListAdapter = new RejectedListAdapter(OfferCompletedListActivity.this, pendingListModelArrayList,"Complete");
+//                                    rvCompletedList.setAdapter(rejectedListAdapter);
+//                                    rvCompletedList.setHasFixedSize(true);
+//                                    rejectedListAdapter.notifyDataSetChanged();
+//                                } else {
+//                                    Toast.makeText(OfferCompletedListActivity.this, "null ", Toast.LENGTH_SHORT).show();
+//                                }
+//                                rvCompletedList.setVisibility(View.VISIBLE);
+//                                rl_no_offers.setVisibility(View.GONE);
+//                            } else {
+//                                Toast.makeText(OfferCompletedListActivity.this, pendingListResponse.getMessage(), Toast.LENGTH_SHORT).show();
+//                                rvCompletedList.setVisibility(View.GONE);
+//                                rl_no_offers.setVisibility(View.VISIBLE);
+//                            }
+//                        }
+//                    } else {
+//                        Toast.makeText(OfferCompletedListActivity.this, "Response Fail !!", Toast.LENGTH_SHORT).show();
+//                    }
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<PendingListResponse> call, Throwable t) {
+//                progressDialog.dismiss();
+//                Toast.makeText(OfferCompletedListActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
 }

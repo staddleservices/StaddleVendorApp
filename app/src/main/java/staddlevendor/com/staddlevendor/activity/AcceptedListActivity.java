@@ -66,6 +66,7 @@ public class AcceptedListActivity extends AppCompatActivity {
     private ApiInterface apiInterface;
     private AlertDialog quantAlert;
     String user_contact;
+    String user_id;
 
 
     @Override
@@ -97,6 +98,7 @@ public class AcceptedListActivity extends AppCompatActivity {
             Toast.makeText(this, getIntent().getStringExtra("DISCOUNT"), Toast.LENGTH_LONG).show();
             Toast.makeText(this, getIntent().getStringExtra("TOTAL"), Toast.LENGTH_LONG).show();
             order_id_action.setText("#"+getIntent().getStringExtra("ORDER_ID"));
+            user_id=getIntent().getStringExtra("UID");
             complete_order_btn.setOnSlideCompleteListener(new SlideToActView.OnSlideCompleteListener() {
                 @Override
                 public void onSlideComplete(SlideToActView slideToActView) {
@@ -268,7 +270,8 @@ public class AcceptedListActivity extends AppCompatActivity {
         pd.setMessage("Loading Please Wait...");
         pd.show();
         ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
-        Call<JsonElement> call = apiInterface.completeOrder(id,String.valueOf(orderList.size()),AppPreferences.loadPreferences(AcceptedListActivity.this, "USER_NAME"),user_contact);
+        String VID = AppPreferences.loadPreferences(AcceptedListActivity.this, "USER_ID");
+        Call<JsonElement> call = apiInterface.completeOrder(id,String.valueOf(orderList.size()),AppPreferences.loadPreferences(AcceptedListActivity.this, "USER_NAME"),user_contact,user_id,VID);
         call.enqueue(new Callback<JsonElement>() {
             @Override
             public void onResponse(@NonNull Call<JsonElement> call, @NonNull Response<JsonElement> response) {
