@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -40,6 +41,7 @@ public class CompleteOrderFragment extends Fragment {
     ApiInterface apiInterface;
     RecyclerView completed_order_list;
     RelativeLayout rl_no_offers;
+    TextView comleted_order_show;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +64,8 @@ public class CompleteOrderFragment extends Fragment {
         completed_order_list.setLayoutManager(new LinearLayoutManager(getContext()));
         iv_back = view.findViewById(R.id.iv_back);
         rl_no_offers = view.findViewById(R.id.rl_no_offers);
+        comleted_order_show = view.findViewById(R.id.comleted_order_show);
+
     }
 
     @Override
@@ -107,10 +111,13 @@ public class CompleteOrderFragment extends Fragment {
                                 }
                                 completed_order_list.setVisibility(View.VISIBLE);
                                 rl_no_offers.setVisibility(View.GONE);
+                                comleted_order_show.setVisibility(View.VISIBLE);
                             } else {
                                 Toast.makeText(getContext(), completedOrdersResponse.getMessage(), Toast.LENGTH_SHORT).show();
                                 completed_order_list.setVisibility(View.GONE);
                                 rl_no_offers.setVisibility(View.VISIBLE);
+                                comleted_order_show.setVisibility(View.GONE);
+
                             }
                         }
                     } else {

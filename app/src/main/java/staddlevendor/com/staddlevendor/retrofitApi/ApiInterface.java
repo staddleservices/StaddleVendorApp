@@ -227,7 +227,7 @@ public interface ApiInterface {
     Call<OnGoingOfferListResponse> getOnGoingOfferList(@Query("vid") String vid);
 
     @GET("wsforgotvenderPassword.php")
-    Call<JsonElement> forgotPassword(@Query("email") String email);
+    Call<JsonElement> forgotPassword(@Query("mobile") String mobile);
 
 
 

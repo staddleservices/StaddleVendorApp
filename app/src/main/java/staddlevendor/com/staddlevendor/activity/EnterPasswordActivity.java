@@ -39,6 +39,7 @@ public class EnterPasswordActivity extends AppCompatActivity {
     EditText edt_pswd;
     Button proceed_btn;
     String mobile_number="";
+    TextView forgot_password_text;
 
     ProgressDialog pd;
     String TAG = getClass().getSimpleName();
@@ -71,6 +72,14 @@ public class EnterPasswordActivity extends AppCompatActivity {
                  }
             }
         });
+
+        forgot_password_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EnterPasswordActivity.this,ForgotPasswordActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void init() {
@@ -81,6 +90,7 @@ public class EnterPasswordActivity extends AppCompatActivity {
         edt_pswd = findViewById(R.id.pswdedttxt);
         proceed_btn = findViewById(R.id.btn_proceed);
         showMob_number.setText(mobile_number);
+        forgot_password_text = findViewById(R.id.forgot_password_text);
 
     }
 

@@ -57,7 +57,6 @@ public class CompletedOrderActivity extends AppCompatActivity {
     RecyclerView rvShopping;
     ImageView iv_back;
     TextView order_id_action,create_date,name_customer,contact_info,date_booking,booking_time,booking_address,tv_item_total,txt_percentage,txt_percentagename,txt_overallTotalprice,promocode,promocutoff;
-    Button btn_complete;
     private OrderMenuAdapter orderMenuAdapter;
     private ArrayList<OrderParsedListModel> orderList;
     LinearLayout promocode_layout;
@@ -76,10 +75,7 @@ public class CompletedOrderActivity extends AppCompatActivity {
         setUpView();
 
         try {
-            if (getIntent().getStringExtra("TAG").equals("Accept"))
-                btn_complete.setVisibility(View.VISIBLE);
-            else
-                btn_complete.setVisibility(View.GONE);
+
 
             orderList = getIntent().getParcelableArrayListExtra("DATALIST");
             Log.e("DATALIST",orderList.get(0).getMenu_name());
@@ -128,12 +124,7 @@ public class CompletedOrderActivity extends AppCompatActivity {
             }
         });
 
-        btn_complete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
 
     }
 
@@ -143,7 +134,6 @@ public class CompletedOrderActivity extends AppCompatActivity {
 
     private void setUpView() {
         rvShopping = findViewById(R.id.rvShopping);
-        btn_complete = findViewById(R.id.btn_complete);
         iv_back = findViewById(R.id.iv_back);
         order_id_action = findViewById(R.id.order_id_action);
         create_date = findViewById(R.id.create_date);

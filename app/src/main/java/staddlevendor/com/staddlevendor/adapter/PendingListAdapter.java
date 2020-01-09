@@ -105,6 +105,8 @@ public class PendingListAdapter extends RecyclerView.Adapter<PendingListAdapter.
             myViewHolder.order_total.setText("  ₹ " + totalPrice);
             myViewHolder.schedule_details.setText(pendingListModel.getBooked_date()+" | "+pendingListModel.getBooking_slot());
             myViewHolder.order_id.setText(pendingListModel.getId());
+            myViewHolder.order_time.setText(pendingListModel.getCreate_date());
+            myViewHolder.itemsx.setText(pendingListModelArrayList.size()+" Item");
 
 //            if (image == null || image.equalsIgnoreCase("")) {
 //                myViewHolder.iv_offer_image.setImageResource(R.drawable.ic_launcher_background);

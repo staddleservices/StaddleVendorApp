@@ -10,286 +10,19 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <RelativeLayout
-            android:id="@+id/ll_nav_my_profile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingStart="@dimen/padding_15"
-            android:paddingTop="2dp"
-            android:paddingEnd="@dimen/padding_15"
-            android:paddingBottom="@dimen/margin_10"
-            tools:ignore="UseCompoundDrawables">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_vector_user"
-                    tools:ignore="ContentDescription" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_10"
-                    android:text="My Profile"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"
-                    android:textStyle="normal" />
 
-            </LinearLayout>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/ic_vector_right"
-                tools:ignore="ContentDescription" />
-        </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/ll_nav_wallet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingStart="@dimen/padding_15"
-            android:paddingTop="@dimen/margin_10"
-            android:paddingEnd="@dimen/padding_15"
-            android:paddingBottom="@dimen/margin_10"
-            android:visibility="gone"
-            tools:ignore="UseCompoundDrawables">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_vector_wallet"
-                    tools:ignore="ContentDescription" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_10"
-                    android:text="Wallet"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"
-                    android:textStyle="normal" />
 
-            </LinearLayout>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/ic_vector_right"
-                tools:ignore="ContentDescription" />
-        </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/ll_changeImage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingStart="@dimen/padding_15"
-            android:paddingTop="@dimen/margin_10"
-            android:paddingEnd="@dimen/padding_15"
-            android:paddingBottom="@dimen/margin_10"
-            tools:ignore="UseCompoundDrawables">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_vector_tags"
-                    tools:ignore="ContentDescription" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_10"
-                    android:text="Change Image"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"
-                    android:textStyle="normal" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/ic_vector_right"
-                tools:ignore="ContentDescription" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/ll_nav_add_menu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingStart="@dimen/padding_15"
-            android:paddingTop="@dimen/margin_10"
-            android:paddingEnd="@dimen/padding_15"
-            android:paddingBottom="@dimen/margin_10"
-            tools:ignore="UseCompoundDrawables">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_vector_tags"
-                    tools:ignore="ContentDescription" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_10"
-                    android:text="Add Service"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"
-                    android:textStyle="normal" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/ic_vector_right"
-                tools:ignore="ContentDescription" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/ll_nav_list_menu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingStart="@dimen/padding_15"
-            android:paddingTop="@dimen/margin_10"
-            android:paddingEnd="@dimen/padding_15"
-            android:paddingBottom="@dimen/margin_10"
-            tools:ignore="UseCompoundDrawables">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_vector_tags"
-                    tools:ignore="ContentDescription" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_10"
-                    android:text="Service List"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"
-                    android:textStyle="normal" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/ic_vector_right"
-                tools:ignore="ContentDescription" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/ll_nav_add_vendor_subcat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingStart="@dimen/padding_15"
-            android:paddingTop="@dimen/margin_10"
-            android:paddingEnd="@dimen/padding_15"
-            android:paddingBottom="@dimen/margin_10"
-            tools:ignore="UseCompoundDrawables">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_vector_tags"
-                    tools:ignore="ContentDescription" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_10"
-                    android:text="Add SubCategory"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"
-                    android:textStyle="normal" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/ic_vector_right"
-                tools:ignore="ContentDescription" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/ll_nav_list_subcategory_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingStart="@dimen/padding_15"
-            android:paddingTop="@dimen/margin_10"
-            android:paddingEnd="@dimen/padding_15"
-            android:paddingBottom="@dimen/margin_10"
-            tools:ignore="UseCompoundDrawables">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_vector_tags"
-                    tools:ignore="ContentDescription" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_10"
-                    android:text="Manage Sub Category"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"
-                    android:textStyle="normal" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/ic_vector_right"
-                tools:ignore="ContentDescription" />
-        </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/ll_nav_add_offer"
@@ -414,12 +147,7 @@
                 tools:ignore="ContentDescription" />
         </RelativeLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginStart="@dimen/margin_10"
-            android:layout_marginEnd="@dimen/margin_20"
-            android:background="@color/black" />
+
 
         <RelativeLayout
             android:id="@+id/ll_nav_settings"
@@ -437,9 +165,9 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_vector_setting"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_setting_blue"
                     tools:ignore="ContentDescription" />
 
                 <TextView
@@ -449,6 +177,7 @@
                     android:text="Settings"
                     android:textColor="@color/black"
                     android:textSize="17sp"
+                    android:fontFamily="@font/mainthinfont"
                     android:textStyle="normal" />
 
             </LinearLayout>
@@ -457,17 +186,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:src="@drawable/ic_vector_right"
+                android:src="@drawable/ic_proceed_arrow"
                 tools:ignore="ContentDescription" />
 
         </RelativeLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginStart="@dimen/margin_10"
-            android:layout_marginEnd="@dimen/margin_20"
-            android:background="@color/black" />
+
 
         <RelativeLayout
             android:id="@+id/ll_nav_contact_us"
@@ -487,7 +211,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_vector_contact_us"
+                    android:src="@drawable/ic_contact_us_blue"
                     tools:ignore="ContentDescription" />
 
                 <TextView
@@ -497,6 +221,7 @@
                     android:text="Contact Us"
                     android:textColor="@color/black"
                     android:textSize="17sp"
+                    android:fontFamily="@font/mainthinfont"
                     android:textStyle="normal" />
 
             </LinearLayout>
@@ -505,7 +230,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:src="@drawable/ic_vector_right"
+                android:src="@drawable/ic_proceed_arrow"
                 tools:ignore="ContentDescription" />
         </RelativeLayout>
 
@@ -525,9 +250,9 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_vector_info_policy"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_policy"
                     tools:ignore="ContentDescription" />
 
                 <TextView
@@ -537,6 +262,7 @@
                     android:text="Policy"
                     android:textColor="@color/black"
                     android:textSize="17sp"
+                    android:fontFamily="@font/mainthinfont"
                     android:textStyle="normal" />
 
             </LinearLayout>
@@ -545,7 +271,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:src="@drawable/ic_vector_right"
+                android:src="@drawable/ic_proceed_arrow"
                 tools:ignore="ContentDescription" />
         </RelativeLayout>
 
@@ -565,9 +291,9 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_vector_about_us"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_info_blue"
                     tools:ignore="ContentDescription" />
 
                 <TextView
@@ -577,6 +303,7 @@
                     android:text="About"
                     android:textColor="@color/black"
                     android:textSize="17sp"
+                    android:fontFamily="@font/mainthinfont"
                     android:textStyle="normal" />
 
             </LinearLayout>
@@ -585,16 +312,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:src="@drawable/ic_vector_right"
+                android:src="@drawable/ic_proceed_arrow"
                 tools:ignore="ContentDescription" />
         </RelativeLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginStart="@dimen/margin_10"
-            android:layout_marginEnd="@dimen/margin_20"
-            android:background="@color/black" />
+
 
         <RelativeLayout
             android:id="@+id/ll_nav_logout"
@@ -612,9 +334,9 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_vector_logout"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_logout_blue"
                     tools:ignore="ContentDescription" />
 
                 <TextView
@@ -622,11 +344,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_10"
                     android:text="Logout"
+                    android:fontFamily="@font/mainthinfont"
                     android:textColor="@color/black"
                     android:textSize="17sp"
                     android:textStyle="normal" />
 
             </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_proceed_arrow"
+                tools:ignore="ContentDescription" />
 
         </RelativeLayout>
 

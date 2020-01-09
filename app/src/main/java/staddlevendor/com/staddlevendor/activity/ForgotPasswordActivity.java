@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -37,7 +38,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     ProgressDialog pd;
     ApiInterface apiInterface;
 
-    LinearLayout ll_btn_submit;
+    Button ll_btn_submit;
     EditText edt_email;
 
     @Override
@@ -60,34 +61,31 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     }
 
     private void find_All_IDs() {
-        ll_btn_submit = findViewById(R.id.ll_btn_submit);
-        edt_email = findViewById(R.id.edt_email);
+        ll_btn_submit = findViewById(R.id.btn_proceed);
+        edt_email = findViewById(R.id.edt_forgot_password);
     }
 
     private void doValidation() {
-        String email = edt_email.getText().toString().trim();
-        if (TextUtils.isEmpty(email)) {
-            edt_email.setError("Enter Email Id");
-            edt_email.requestFocus();
-        } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            edt_email.setError("Enter valid email id.");
+        String mobile = edt_email.getText().toString().trim();
+        if (TextUtils.isEmpty(mobile)) {
+            edt_email.setError("Enter Mobile Number");
             edt_email.requestFocus();
         } else {
             if (CheckNetwork.isNetworkAvailable(ForgotPasswordActivity.this)) {
-                forgotPassword(email);
+                forgotPassword(mobile);
             } else {
                 Toast.makeText(ForgotPasswordActivity.this, "Check your internet connection !", Toast.LENGTH_SHORT).show();
             }
         }
     }
 
-    private void forgotPassword(String email) {
+    private void forgotPassword(String mobile) {
         pd = new ProgressDialog(ForgotPasswordActivity.this);
         pd.setCancelable(false);
         pd.setMessage("Loading Please Wait...");
         pd.show();
 
-        Call<JsonElement> call = apiInterface.forgotPassword(email);
+        Call<JsonElement> call = apiInterface.forgotPassword(mobile);
 
         call.enqueue(new Callback<JsonElement>() {
             @Override

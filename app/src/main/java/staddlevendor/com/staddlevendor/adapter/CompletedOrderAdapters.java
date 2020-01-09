@@ -24,6 +24,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import staddlevendor.com.staddlevendor.R;
 import staddlevendor.com.staddlevendor.activity.AcceptedListActivity;
+import staddlevendor.com.staddlevendor.activity.CompletedOrderActivity;
 import staddlevendor.com.staddlevendor.activity.PendingListActivity;
 import staddlevendor.com.staddlevendor.activity.ProductListActivity;
 import staddlevendor.com.staddlevendor.bean.AcceptedListModel;
@@ -97,7 +98,7 @@ public class CompletedOrderAdapters extends RecyclerView.Adapter<CompletedOrderA
             float comm = Float.parseFloat(pendingListModel.getDiscount());
             float totalPrice = tot - comm;
             myViewHolder.order_total.setText("  ₹ " + totalPrice);
-            myViewHolder.schedule_details.setText(pendingListModel.getBooked_date() + " | " + pendingListModel.getBooking_slot());
+            myViewHolder.order_time.setText(pendingListModel.getBooked_date() + " | " + pendingListModel.getBooking_slot());
             myViewHolder.order_id.setText(pendingListModel.getId());
 
 //            if (image == null || image.equalsIgnoreCase("")) {
@@ -127,7 +128,7 @@ public class CompletedOrderAdapters extends RecyclerView.Adapter<CompletedOrderA
             myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(mContext, AcceptedListActivity.class);
+                    Intent intent = new Intent(mContext, CompletedOrderActivity.class);
                     intent.putParcelableArrayListExtra("DATALIST", completedOrderLists.get(position).getData());
                     intent.putExtra("TAG", tag);
                     intent.putExtra("ID", completedOrderLists.get(position).getId());
@@ -142,6 +143,7 @@ public class CompletedOrderAdapters extends RecyclerView.Adapter<CompletedOrderA
                     intent.putExtra("PROMONAME", completedOrderLists.get(position).getPromocode());
                     intent.putExtra("PROMOCUTOFF", completedOrderLists.get(position).getPromodiscount());
                     intent.putExtra("UID", completedOrderLists.get(position).getUid());
+                    intent.putExtra("ADDRESS",completedOrderLists.get(position).getCompleteaddress());
                     intent.putExtra("STATUS", completedOrderLists.get(position).getStatus());
 
 //                    if (!pendingListModelArrayList.get(position).getState().equals(""))

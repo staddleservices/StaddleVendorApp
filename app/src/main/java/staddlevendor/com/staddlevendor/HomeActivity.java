@@ -40,6 +40,7 @@ import staddlevendor.com.staddlevendor.activity.AddVendorSubCategoryActivity;
 import staddlevendor.com.staddlevendor.activity.ChangeImageActivity;
 import staddlevendor.com.staddlevendor.activity.ChangePasswordActivity;
 import staddlevendor.com.staddlevendor.activity.ContactUsActivity;
+import staddlevendor.com.staddlevendor.activity.EnterPasswordActivity;
 import staddlevendor.com.staddlevendor.activity.ManageSubCategoryListActivity;
 import staddlevendor.com.staddlevendor.activity.MenuListActivity;
 import staddlevendor.com.staddlevendor.activity.PendingListActivity;
@@ -54,6 +55,7 @@ import staddlevendor.com.staddlevendor.fragment.MenuFragment;
 import staddlevendor.com.staddlevendor.fragment.NewOrderAkaPendingFragment;
 import staddlevendor.com.staddlevendor.fragment.NotificationFragment;
 import staddlevendor.com.staddlevendor.activity.ProfileActivity;
+import staddlevendor.com.staddlevendor.fragment.ProfileFragment;
 import staddlevendor.com.staddlevendor.fragment.WalletFragment;
 import staddlevendor.com.staddlevendor.retrofitApi.ApiClient;
 import staddlevendor.com.staddlevendor.retrofitApi.ApiInterface;
@@ -66,22 +68,23 @@ import static staddlevendor.com.staddlevendor.sheardPref.AppPreferences.PREFS_NA
 public class HomeActivity extends AppCompatActivity implements
         BottomNavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
-    ImageView iv_edit, iv_user_profile_pic;
+    ImageView  iv_user_profile_pic;
     DrawerLayout drawer;
+    ImageView open_nav_ic;
 
     FragmentManager fragmentManager = getSupportFragmentManager();
     BottomNavigationView navigation;
 
-    RelativeLayout ll_nav_my_profile, ll_nav_wallet, ll_changeImage, ll_nav_add_offer, ll_nav_add_menu,
-            ll_nav_add_vendor_subcat, ll_nav_list_menu, ll_nav_list_subcategory_list,
+    RelativeLayout  ll_nav_wallet,
             ll_nav_notification, ll_nav_contact_us,
             ll_nav_policy, ll_nav_about, ll_nav_logout, ll_nav_settings;
 
-    String userName, vendorId;
-    TextView tv_user_name, tv_email, txt_shop_name;
+    String userName, vendorId,catId;
+    TextView tv_user_name, tv_email, txt_shop_name,city_and_cate;
 
     ApiInterface apiInterface;
     String adharcard_no, gst_no, vendorName, vendorEmail, vendorMobile, post_picture, location;
+
 
     private boolean doubleBackToExitPressedOnce;
     private Handler mHandler = new Handler();
@@ -100,8 +103,16 @@ public class HomeActivity extends AppCompatActivity implements
 
         userName = AppPreferences.loadPreferences(HomeActivity.this, "USER_NAME");
         vendorId = AppPreferences.loadPreferences(HomeActivity.this, "USER_ID");
+        catId = AppPreferences.loadPreferences(HomeActivity.this, "USER_CID");
+
 
         find_All_IDs();
+        open_nav_ic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.openDrawer(Gravity.START);
+            }
+        });
 
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
 
@@ -117,27 +128,42 @@ public class HomeActivity extends AppCompatActivity implements
             txt_shop_name.setText(userName);
         }
 
+        switch (catId){
+            case "1":{
+                city_and_cate.setText("Beauty Salon");
+
+                break;
+            }
+            case "2":{
+                city_and_cate.setText("House Keeping");
+                break;
+            }
+            case "3":{
+                city_and_cate.setText("Security");
+                break;
+            }
+            case "4":{
+                city_and_cate.setText("Spa");
+                break;
+            }
+
+
+        }
+
         replaceFragment(new NewOrderAkaPendingFragment());
 
         navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
-        navigation.setSelectedItemId(R.id.navigation_home);
+        navigation.setSelectedItemId(R.id.new_orders_frag);
 
-        ll_nav_my_profile.setOnClickListener(this);
-        ll_nav_wallet.setOnClickListener(this);
-        ll_changeImage.setOnClickListener(this);
-        ll_nav_add_offer.setOnClickListener(this);
-        ll_nav_add_menu.setOnClickListener(this);
-        ll_nav_add_vendor_subcat.setOnClickListener(this);
-        ll_nav_list_subcategory_list.setOnClickListener(this);
-        ll_nav_list_menu.setOnClickListener(this);
-        ll_nav_notification.setOnClickListener(this);
+
+        //ll_nav_wallet.setOnClickListener(this);
+        //ll_nav_notification.setOnClickListener(this);
         ll_nav_settings.setOnClickListener(this);
         ll_nav_contact_us.setOnClickListener(this);
         ll_nav_about.setOnClickListener(this);
         ll_nav_policy.setOnClickListener(this);
         ll_nav_logout.setOnClickListener(this);
-        iv_edit.setOnClickListener(this);
 
     }
 
@@ -159,7 +185,7 @@ public class HomeActivity extends AppCompatActivity implements
                 } else if (fragmentName.equals(MenuFragment.class.getSimpleName())
                         || fragmentName.equals(NotificationFragment.class.getSimpleName())
                         || fragmentName.equals(WalletFragment.class.getSimpleName())) {
-                    navigation.setSelectedItemId(R.id.navigation_home);
+                    navigation.setSelectedItemId(R.id.new_orders_frag);
                     replaceFragment(new NewOrderAkaPendingFragment());
                 }
             }
@@ -168,43 +194,21 @@ public class HomeActivity extends AppCompatActivity implements
 
     public void onClick(View view) {
         int id = view.getId();
-        if (id == R.id.ll_nav_my_profile) {
-            Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.trans_left_in, R.anim.trans_left_out);
-        } else if (id == R.id.ll_nav_wallet) {
-            navigation.setSelectedItemId(R.id.navigation_wallet);
-            replaceFragment(new WalletFragment());
-            overridePendingTransition(R.anim.trans_left_in, R.anim.trans_left_out);
-        } else if (id == R.id.ll_nav_add_offer) {
+      if (id == R.id.ll_nav_add_offer) {
             Intent intent = new Intent(HomeActivity.this, AddOfferActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.trans_left_in, R.anim.trans_left_out);
-        } else if (id == R.id.ll_nav_add_menu) {
-            Intent intent = new Intent(HomeActivity.this, AddMenuActivity.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.trans_left_in, R.anim.trans_left_out);
-        } else if (id == R.id.ll_nav_add_vendor_subcat) {
-            Intent intent = new Intent(HomeActivity.this, AddVendorSubCategoryActivity.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.trans_left_in, R.anim.trans_left_out);
-        } else if (id == R.id.ll_nav_list_subcategory_list) {
-            Intent intent = new Intent(HomeActivity.this, ManageSubCategoryListActivity.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.trans_left_in, R.anim.trans_left_out);
-        } else if (id == R.id.ll_nav_list_menu) {
-            Intent intent = new Intent(HomeActivity.this, MenuListActivity.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.trans_left_in, R.anim.trans_left_out);
-        } else if (id == R.id.ll_nav_settings) {
+        }else if (id == R.id.ll_nav_settings) {
             Intent intent = new Intent(HomeActivity.this, ChangePasswordActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.trans_left_in, R.anim.trans_left_out);
-        } else if (id == R.id.ll_nav_notification) {
-            navigation.setSelectedItemId(R.id.navigation_notification);
-            replaceFragment(new NotificationFragment());
-            overridePendingTransition(R.anim.trans_left_in, R.anim.trans_left_out);
-        } else if (id == R.id.ll_nav_contact_us) {
+        }
+//        else if (id == R.id.ll_nav_notification) {
+//            navigation.setSelectedItemId(R.id.navigation_notification);
+//            replaceFragment(new NotificationFragment());
+//            overridePendingTransition(R.anim.trans_left_in, R.anim.trans_left_out);
+//        }
+         else if (id == R.id.ll_nav_contact_us) {
             Intent intent = new Intent(HomeActivity.this, ContactUsActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.trans_left_in, R.anim.trans_left_out);
@@ -220,10 +224,6 @@ public class HomeActivity extends AppCompatActivity implements
             logOut();
         } else if (id == R.id.iv_edit) {
             Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.trans_left_in, R.anim.trans_left_out);
-        } else if (id == R.id.ll_changeImage) {
-            Intent intent = new Intent(HomeActivity.this, ChangeImageActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.trans_left_in, R.anim.trans_left_out);
         }
@@ -284,26 +284,22 @@ public class HomeActivity extends AppCompatActivity implements
 
     private void find_All_IDs() {
         drawer = findViewById(R.id.drawer_layout);
-        ll_nav_my_profile = findViewById(R.id.ll_nav_my_profile);
-        ll_changeImage = findViewById(R.id.ll_changeImage);
-        ll_nav_wallet = findViewById(R.id.ll_nav_wallet);
-        ll_nav_add_offer = findViewById(R.id.ll_nav_add_offer);
-        ll_nav_add_menu = findViewById(R.id.ll_nav_add_menu);
-        ll_nav_add_vendor_subcat = findViewById(R.id.ll_nav_add_vendor_subcat);
-        ll_nav_list_subcategory_list = findViewById(R.id.ll_nav_list_subcategory_list);
-        ll_nav_list_menu = findViewById(R.id.ll_nav_list_menu);
+
+
+
         ll_nav_notification = findViewById(R.id.ll_nav_notification);
         ll_nav_settings = findViewById(R.id.ll_nav_settings);
         ll_nav_contact_us = findViewById(R.id.ll_nav_contact_us);
         ll_nav_about = findViewById(R.id.ll_nav_about);
         ll_nav_policy = findViewById(R.id.ll_nav_policy);
         ll_nav_logout = findViewById(R.id.ll_nav_logout);
-        iv_edit = findViewById(R.id.iv_edit);
+        open_nav_ic = findViewById(R.id.open_nav_ic);
 
         tv_user_name = findViewById(R.id.tv_user_name);
         iv_user_profile_pic = findViewById(R.id.iv_user_profile_pic);
         txt_shop_name = findViewById(R.id.txt_shop_name);
         tv_email = findViewById(R.id.tv_email);
+        city_and_cate = findViewById(R.id.city_and_category);
     }
 
     @Override
@@ -311,17 +307,17 @@ public class HomeActivity extends AppCompatActivity implements
         Fragment fragment = null;
         try {
             switch (item.getItemId()) {
-                case R.id.navigation_select:
+                case R.id.accepted_orders_frag:
                     //drawer.openDrawer(Gravity.START);
                     fragment = new AcceptedOrderFragment();
                     break;
-                case R.id.navigation_notification:
+                case R.id.delivered_orders_frag:
                     fragment = new CompleteOrderFragment();
                     break;
-                case R.id.navigation_wallet:
-                    fragment = new WalletFragment();
+                case R.id.managment_vendor_profile:
+                    fragment = new ProfileFragment();
                     break;
-                case R.id.navigation_home:
+                case R.id.new_orders_frag:
                     fragment = new NewOrderAkaPendingFragment();
                     break;
             }

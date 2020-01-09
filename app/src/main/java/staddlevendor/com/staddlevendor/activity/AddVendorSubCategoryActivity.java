@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -29,7 +30,7 @@ import staddlevendor.com.staddlevendor.utils.AppConstants;
 import staddlevendor.com.staddlevendor.utils.CheckNetwork;
 
 public class AddVendorSubCategoryActivity extends AppCompatActivity {
-    RelativeLayout rl_add_subcat;
+    Button rl_add_subcat;
     ApiInterface apiInterface;
     String TAG = getClass().getSimpleName();
     ProgressDialog progressDialog;

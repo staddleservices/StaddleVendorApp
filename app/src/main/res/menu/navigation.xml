@@ -2,22 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     >
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/new_orders_frag"
         android:icon="@drawable/new_order_ic"
         android:title="New Orders"
         android:enabled="true"/>
     <item
-        android:id="@+id/navigation_select"
+        android:id="@+id/accepted_orders_frag"
         android:icon="@drawable/accepted_orders_ic"
         android:title="Accepted Orders" />
 
     <item
-        android:id="@+id/navigation_notification"
+        android:id="@+id/delivered_orders_frag"
         android:icon="@drawable/delivered_order"
         android:title="Delivered" />
 
     <item
-        android:id="@+id/navigation_wallet"
+        android:id="@+id/managment_vendor_profile"
         android:icon="@drawable/vendor_managment_ic"
         android:title="Management" />
 

@@ -16,7 +16,11 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute">
-        <activity android:name=".activity.CompletedOrderActivity"></activity>
+        <activity android:name=".activity.TotalSalesActivity"></activity>
+        <activity
+            android:name=".activity.AddPromoCodeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.CompletedOrderActivity" />
         <activity android:name=".activity.AcceptedListActivity" />
         <activity android:name=".activity.EnterPasswordActivity" />
         <activity android:name=".activity.MobileOtpActivity" />

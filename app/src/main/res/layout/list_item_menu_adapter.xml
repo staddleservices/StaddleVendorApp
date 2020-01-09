@@ -6,7 +6,7 @@
     android:layout_marginStart="@dimen/margin_5"
     android:layout_marginTop="5dp"
     android:layout_marginEnd="@dimen/margin_5"
-    android:background="@drawable/shape_order_out_line"
+    android:background="@drawable/loginscreenmobile"
     android:padding="10dp"
     android:visibility="visible">
 
@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:padding="3dp"
         android:text="name"
+        android:fontFamily="@font/mainthinfont"
         android:textColor="@color/white"
         android:textSize="16sp" />
     <RelativeLayout
@@ -30,6 +31,7 @@
             android:id="@+id/txt_service_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/mainthinfont"
             android:layout_centerVertical="true"
             android:layout_toStartOf="@+id/btn_switch_old"
             android:padding="3dp"
@@ -76,6 +78,7 @@
         android:layout_below="@+id/relData"
         android:padding="3dp"
         android:text="₹ 500"
+        android:fontFamily="@font/mainthinfont"
         android:textColor="@color/white"
         android:textSize="14sp" />
 

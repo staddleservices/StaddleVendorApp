@@ -31,18 +31,28 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/rel_actionbar"
         android:layout_margin="10dp"
-        android:background="@drawable/shape_add_offer_bg"
         android:padding="15dp"
+        android:layout_marginTop="20dp"
         android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/noordersicon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/no_orders_yet"
+            android:layout_centerHorizontal="true"/>
 
         <TextView
             android:id="@+id/txt_nodetails"
             style="@style/Base.TextAppearance.AppCompat.Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="Product Not Available!!"
-            android:textColor="@color/white" />
+            android:layout_below="@+id/noordersicon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/mainthinfont"
+            android:text="No orders"
+            android:textColor="#000000" />
 
     </RelativeLayout>
 </RelativeLayout>

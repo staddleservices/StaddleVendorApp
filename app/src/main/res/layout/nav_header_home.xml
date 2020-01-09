@@ -19,12 +19,7 @@
         android:background="@drawable/shape_border_cards_corne"
         android:layout_gravity="right">
 
-        <ImageView
-            android:id="@+id/iv_edit"
-            android:layout_width="30dp"
-            android:layout_height="25dp"
-            android:src="@drawable/ic_pencil"
-            tools:ignore="ContentDescription" />
+
 
     </RelativeLayout>
 
@@ -54,6 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="@dimen/margin_10"
+                android:fontFamily="@font/mainboldfont"
                 android:text="Android Studio"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="@color/black"
@@ -69,6 +65,7 @@
                 android:ellipsize="end"
                 android:singleLine="true"
                 android:maxLines="1"
+                android:fontFamily="@font/mainthinfont"
                 android:text="Android Studio"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="@color/black"

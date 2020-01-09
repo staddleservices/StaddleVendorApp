@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SwitchCompat;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -46,7 +47,7 @@ import staddlevendor.com.staddlevendor.utils.CheckNetwork;
 public class AddMenuActivity extends AppCompatActivity {
     ApiInterface apiInterface;
     EditText edt_menu_name, edt_price;
-    RelativeLayout rl_add_menu;
+    Button rl_add_menu;
     SwitchCompat btn_switch;
     String menuName = "", price = "", vendorId = "";
     ImageView iv_back;
@@ -102,11 +103,11 @@ public class AddMenuActivity extends AppCompatActivity {
                 if (!isCategoryVisbile) {
                     isCategoryVisbile = true;
                     rv_sub_category_tree.setVisibility(View.VISIBLE);
-                    iv_sub_category_tree_arrow.setImageResource(R.drawable.ic_vector_circle_down_arrow);
+                    iv_sub_category_tree_arrow.setImageResource(R.drawable.ic_up_nav_arrow);
                 } else {
                     isCategoryVisbile = false;
                     rv_sub_category_tree.setVisibility(View.GONE);
-                    iv_sub_category_tree_arrow.setImageResource(R.drawable.ic_vector_circle_left_arrow);
+                    iv_sub_category_tree_arrow.setImageResource(R.drawable.ic_down_nav_arrow);
                 }
             }
         });

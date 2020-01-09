@@ -29,4 +29,6 @@ public class EndApi extends BaseApi {
     static final String UPDATE_PRODUCT_STATUS_ACCEPTED= "changeOrderStatusAccept.php?";
     static final String GET_OFFER_COMPLETED_LIST = "completed_order_list_vender.php?";
     static final String GET_ONGOING_OFFER_LIST = "productOngoingOfferList.php?";
+    public static final String FETCH_VENDOR_PROMOS = "http://35.200.162.209/mobileapp/api/fetch_all_promos.php";
+    public static final String ADD_COUPONS = "http://35.200.162.209/mobileapp/api/coupons.php";
 }

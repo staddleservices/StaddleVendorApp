@@ -8,8 +8,8 @@
     <RelativeLayout
         android:id="@+id/rel_action_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape_add_offer_bg"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/app_color_2"
         android:padding="@dimen/padding_10">
 
         <ImageView
@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:src="@drawable/ic_vector_back"
+            android:src="@drawable/backarrowbtnwhite"
             tools:ignore="ContentDescription" />
 
         <TextView
@@ -26,11 +26,16 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/margin_5"
+            android:fontFamily="@font/mainboldfont"
             android:layout_toEndOf="@id/iv_back"
             android:text="Service List"
             android:textColor="@color/white"
-            android:textSize="@dimen/app_txt_size" />
+            android:textSize="15dp" />
     </RelativeLayout>
+    <View android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_below="@+id/rel_action_bar"
+        android:background="@drawable/toolbardropshadow"/>
 
     <TextView
         android:id="@+id/txt_nomsg"

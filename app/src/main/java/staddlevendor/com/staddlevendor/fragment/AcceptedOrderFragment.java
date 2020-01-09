@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -41,6 +42,7 @@ public class AcceptedOrderFragment extends Fragment {
     ApiInterface apiInterface;
     RecyclerView rvPendingList;
     RelativeLayout rl_no_offers;
+    TextView neworder_txt;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +65,7 @@ public class AcceptedOrderFragment extends Fragment {
         rvPendingList.setLayoutManager(new LinearLayoutManager(getContext()));
         iv_back = view.findViewById(R.id.iv_back);
         rl_no_offers = view.findViewById(R.id.rl_no_offers);
+        neworder_txt = view.findViewById(R.id.neworder_txt);
     }
 
     @Override
@@ -108,10 +111,12 @@ public class AcceptedOrderFragment extends Fragment {
                                 }
                                 rvPendingList.setVisibility(View.VISIBLE);
                                 rl_no_offers.setVisibility(View.GONE);
+                                neworder_txt.setVisibility(View.VISIBLE);
                             } else {
                                 Toast.makeText(getContext(), acceptedResponse.getMessage(), Toast.LENGTH_SHORT).show();
                                 rvPendingList.setVisibility(View.GONE);
                                 rl_no_offers.setVisibility(View.VISIBLE);
+                                neworder_txt.setVisibility(View.GONE);
                             }
                         }
                     } else {

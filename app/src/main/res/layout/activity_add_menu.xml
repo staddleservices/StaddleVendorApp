@@ -11,8 +11,8 @@
     <RelativeLayout
         android:id="@+id/rel_action_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape_add_offer_bg"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/app_color_2"
         android:padding="@dimen/padding_10">
 
         <ImageView
@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:src="@drawable/ic_vector_back"
+            android:src="@drawable/backarrowbtnwhite"
             tools:ignore="ContentDescription" />
 
         <TextView
@@ -31,9 +31,14 @@
             android:layout_marginStart="@dimen/margin_5"
             android:layout_toEndOf="@id/iv_back"
             android:text="@string/add_menu"
+            android:fontFamily="@font/mainboldfont"
             android:textColor="@color/white"
-            android:textSize="@dimen/app_txt_size" />
+            android:textSize="15dp" />
     </RelativeLayout>
+    <View android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_below="@+id/rel_toolbar"
+        android:background="@drawable/toolbardropshadow"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -42,12 +47,11 @@
         <LinearLayout
             android:id="@+id/rl_offer_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginStart="@dimen/margin_10"
             android:layout_marginTop="@dimen/margin_10"
             android:layout_marginEnd="@dimen/margin_10"
             android:layout_marginBottom="@dimen/margin_20"
-            android:background="@drawable/my_order_bg_shap"
             android:orientation="vertical"
             android:padding="@dimen/padding_5">
 
@@ -57,39 +61,37 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_5"
                 android:layout_marginTop="@dimen/margin_15"
-                android:layout_marginEnd="@dimen/margin_5"
-                android:background="@drawable/shape_order_out_line"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/mobileotpedittext"
                 android:hint="@string/menu_name"
                 android:imeOptions="actionNext"
                 android:inputType="text"
                 android:padding="@dimen/padding_10"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textSize="@dimen/txt_size_18" />
+                android:fontFamily="@font/mainthinfont"
+                android:textColor="@color/app_color_2"
+                android:textSize="13dp" />
 
-            <LinearLayout
-                android:id="@+id/ll_details"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_5"
-                android:layout_marginTop="@dimen/margin_10"
-                android:layout_marginEnd="@dimen/margin_5"
-                android:background="@drawable/shape_order_out_line"
-                android:padding="@dimen/padding_10">
+
 
                 <EditText
                     android:id="@+id/edt_price"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
+                    android:layout_height="40dp"
                     android:gravity="top"
+                    android:background="@drawable/mobileotpedittext"
                     android:hint="Enter Price"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
                     android:imeOptions="actionDone"
                     android:inputType="numberDecimal"
-                    android:textColor="@android:color/white"
-                    android:textColorHint="@color/white"
-                    android:textSize="@dimen/txt_size_18" />
-            </LinearLayout>
+                    android:textColor="@color/app_color_2"
+
+                    android:fontFamily="@font/mainthinfont"
+                    android:textSize="13dp" />
+
 
             <RelativeLayout
                 android:id="@+id/rel_sub_categorytree"
@@ -97,8 +99,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_5"
                 android:layout_marginTop="@dimen/margin_10"
-                android:layout_marginEnd="@dimen/margin_5"
-                android:background="@drawable/shape_order_out_line">
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/mobileotpedittext">
 
                 <TextView
                     android:id="@+id/tv_sub_category_tree"
@@ -107,19 +109,20 @@
                     android:layout_marginEnd="@dimen/margin_10"
                     android:hint="Sub Category"
                     android:padding="@dimen/padding_10"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
-                    android:textSize="@dimen/txt_size_18" />
+                    android:textColor="@color/app_color_2"
+                    android:textColorHint="@color/app_color_2"
+                    android:fontFamily="@font/mainthinfont"
+                    android:textSize="13dp" />
 
                 <ImageView
                     android:id="@+id/iv_sub_category_tree_arrow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerInParent="true"
                     android:layout_marginEnd="10dp"
                     android:padding="5dp"
-                    android:src="@drawable/ic_vector_circle_left_arrow"
+                    android:src="@drawable/ic_down_nav_arrow"
                     tools:ignore="ContentDescription" />
 
             </RelativeLayout>
@@ -149,26 +152,22 @@
                     android:visibility="gone" />
             </LinearLayout>
 
-            <RelativeLayout
+            <Button
                 android:id="@+id/rl_add_menu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/margin_20"
                 android:layout_marginBottom="@dimen/margin_5"
-                android:background="@drawable/ordered_shap"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/loginscreenmobile"
+                android:text="Add"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/mainboldfont"
                 android:padding="@dimen/padding_7">
 
-                <TextView
-                    android:id="@+id/tv_add_offer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_15"
-                    android:layout_marginEnd="@dimen/margin_15"
-                    android:text="@string/add_menu"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/btn_txt_size" />
-            </RelativeLayout>
+            </Button>
 
         </LinearLayout>
 

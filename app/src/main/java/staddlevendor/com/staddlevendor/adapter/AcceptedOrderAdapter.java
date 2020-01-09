@@ -105,7 +105,7 @@ public class AcceptedOrderAdapter extends RecyclerView.Adapter<AcceptedOrderAdap
             float comm = Float.parseFloat(pendingListModel.getDiscount());
             float totalPrice = tot - comm;
             myViewHolder.order_total.setText("  ₹ " + totalPrice);
-            myViewHolder.schedule_details.setText(pendingListModel.getBooked_date()+" | "+pendingListModel.getBooking_slot());
+            myViewHolder.order_time.setText(pendingListModel.getBooked_date()+" | "+pendingListModel.getBooking_slot());
             myViewHolder.order_id.setText(pendingListModel.getId());
 
 //            if (image == null || image.equalsIgnoreCase("")) {
