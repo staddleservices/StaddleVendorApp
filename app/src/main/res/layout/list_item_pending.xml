@@ -26,16 +26,34 @@
                android:layout_marginStart="15dp"
                android:layout_marginEnd="15dp"
                android:layout_marginTop="15dp">
-               <TextView
-                   android:id="@+id/order_id"
+
+
+               <RelativeLayout
+                   android:id="@+id/couponname"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:fontFamily="@font/mainboldfont"
-                   android:textColor="#000000"
-                   android:textSize="15dp"
-                   android:text="#OR7527537"
 
-                   />
+                   android:layout_marginRight="10dp"
+                   android:layout_marginBottom="10dp"
+                   android:background="@drawable/order_id_border">
+
+                   <TextView
+                       android:id="@+id/order_id"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:fontFamily="@font/mainthinfont"
+                       android:textColor="@android:color/holo_green_light"
+                       android:layout_marginTop="5dp"
+                       android:layout_marginStart="5dp"
+                       android:layout_marginEnd="5dp"
+                       android:layout_marginBottom="5dp"
+                       android:textSize="13dp"
+                       android:text="#OR7527537"
+                       />
+
+
+               </RelativeLayout>
+
                <TextView
                    android:id="@+id/from_user"
                    android:layout_width="wrap_content"
@@ -45,7 +63,7 @@
                    android:textSize="13dp"
                    android:layout_marginTop="5dp"
                    android:textColor="@color/app_color_2"
-                   android:layout_below="@+id/order_id"/>
+                   android:layout_below="@+id/couponname"/>
                <TextView
                    android:id="@+id/order_time"
                    android:layout_width="wrap_content"

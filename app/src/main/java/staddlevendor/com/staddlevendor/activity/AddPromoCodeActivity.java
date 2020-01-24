@@ -179,7 +179,7 @@ public class AddPromoCodeActivity extends AppCompatActivity implements AdapterVi
         MySingleton.getInstance(getApplicationContext()).addTorequestque(stringRequest);
     }
 
-    private void fetch_vendor_promos(final String user_id) {
+    private  void fetch_vendor_promos(final String user_id) {
 
 
         StringRequest stringRequest=new StringRequest(Request.Method.POST, FETCH_VENDOR_PROMOS,

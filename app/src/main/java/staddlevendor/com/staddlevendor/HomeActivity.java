@@ -2,6 +2,7 @@ package staddlevendor.com.staddlevendor;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -16,6 +17,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -25,6 +27,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.play.core.appupdate.AppUpdateInfo;
+import com.google.android.play.core.appupdate.AppUpdateManager;
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
+import com.google.android.play.core.install.model.AppUpdateType;
+import com.google.android.play.core.install.model.InstallStatus;
+import com.google.android.play.core.install.model.UpdateAvailability;
+import com.google.android.play.core.tasks.OnSuccessListener;
+import com.google.android.play.core.tasks.Task;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -84,7 +94,7 @@ public class HomeActivity extends AppCompatActivity implements
 
     ApiInterface apiInterface;
     String adharcard_no, gst_no, vendorName, vendorEmail, vendorMobile, post_picture, location;
-
+    AppUpdateManager appUpdateManager = null;
 
     private boolean doubleBackToExitPressedOnce;
     private Handler mHandler = new Handler();
@@ -94,6 +104,7 @@ public class HomeActivity extends AppCompatActivity implements
             doubleBackToExitPressedOnce = false;
         }
     };
+    private int MY_REQUEST_CODE=111;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -165,6 +176,48 @@ public class HomeActivity extends AppCompatActivity implements
         ll_nav_policy.setOnClickListener(this);
         ll_nav_logout.setOnClickListener(this);
 
+        // Creates instance of the manager.
+         appUpdateManager= AppUpdateManagerFactory.create(getApplicationContext());
+
+// Returns an intent object that you use to check for an update.
+        Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
+
+// Checks that the platform will allow the specified type of update.
+        appUpdateInfoTask.addOnSuccessListener(new OnSuccessListener<AppUpdateInfo>() {
+            @Override
+            public void onSuccess(AppUpdateInfo appUpdateInfo) {
+                if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+                        // For a flexible update, use AppUpdateType.FLEXIBLE
+                        && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
+                    // Request the update.
+                    try {
+                        appUpdateManager.startUpdateFlowForResult(
+                                // Pass the intent that is returned by 'getAppUpdateInfo()'.
+                                appUpdateInfo,
+                                // Or 'AppUpdateType.FLEXIBLE' for flexible updates.
+                                AppUpdateType.IMMEDIATE,
+                                // The current activity making the update request.
+                                HomeActivity.this,
+                                // Include a request code to later monitor this update request.
+                                MY_REQUEST_CODE);
+                    } catch (IntentSender.SendIntentException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == MY_REQUEST_CODE) {
+            if (resultCode != RESULT_OK) {
+                Log.e("Update" , String.valueOf(resultCode));
+                // If the update is cancelled or fails,
+                // you can request to start the update again.
+            }
+        }
     }
 
     @Override
@@ -191,7 +244,24 @@ public class HomeActivity extends AppCompatActivity implements
             }
         }
     }
+    @Override
+    protected void onResume() {
+        super.onResume();
 
+        appUpdateManager
+                .getAppUpdateInfo()
+                .addOnSuccessListener(new OnSuccessListener<AppUpdateInfo>() {
+                    @Override
+                    public void onSuccess(AppUpdateInfo appUpdateInfo) {
+
+                        // If the update is downloaded but not installed,
+                        // notify the user to complete the update.
+                        if (appUpdateInfo.installStatus() == InstallStatus.DOWNLOADED) {
+                            Toast.makeText(HomeActivity.this, "Update Completed", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
     public void onClick(View view) {
         int id = view.getId();
       if (id == R.id.ll_nav_add_offer) {

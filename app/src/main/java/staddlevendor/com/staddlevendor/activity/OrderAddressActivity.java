@@ -81,8 +81,8 @@ public class OrderAddressActivity extends AppCompatActivity {
             create_date.setText(getIntent().getStringExtra("CREATE_DATE"));
             date_booking.setText("DATE : "+getIntent().getStringExtra("DATE"));
             booking_time.setText("Time : "+getIntent().getStringExtra("TIME"));
-            Toast.makeText(this, getIntent().getStringExtra("DISCOUNT"), Toast.LENGTH_LONG).show();
-            Toast.makeText(this, getIntent().getStringExtra("TOTAL"), Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, getIntent().getStringExtra("DISCOUNT"), Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, getIntent().getStringExtra("TOTAL"), Toast.LENGTH_LONG).show();
             order_id_action.setText("#"+getIntent().getStringExtra("ORDER_ID"));
             confirm_order_btn.setOnSlideCompleteListener(new SlideToActView.OnSlideCompleteListener() {
                 @Override
@@ -190,10 +190,10 @@ public class OrderAddressActivity extends AppCompatActivity {
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
         String vname = AppPreferences.loadPreferences(OrderAddressActivity.this, "USER_NAME");
         String VID = AppPreferences.loadPreferences(OrderAddressActivity.this, "USER_ID");
-        Log.e("INFO",vname);
-        Log.e("INFO",VID);
-        Log.e("INFO",uid);
-        Log.e("INFO",productId);
+//        Log.e("INFO",vname);
+//        Log.e("INFO",VID);
+//        Log.e("INFO",uid);
+//        Log.e("INFO",productId);
         Call<JsonElement> call = apiInterface.updateProductSatusAccepted(productId,vname,VID,uid);
 
         call.enqueue(new Callback<JsonElement>() {

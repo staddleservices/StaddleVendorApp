@@ -68,6 +68,7 @@ public class EnterPasswordActivity extends AppCompatActivity {
                  if(pswd.equals("") || pswd.equals(null)){
 
                  }else{
+                     //mobile_number = "9799224434";
                      doValidation(mobile_number,pswd,DEVICE_TOKEN);
                  }
             }

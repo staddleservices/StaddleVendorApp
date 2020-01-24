@@ -4,10 +4,10 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "staddlevendor.com.staddlevendor"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 28
-        versionCode 7
-        versionName "1.0"
+        versionCode 9
+        versionName "1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 //        Staddle123
     }
@@ -37,7 +37,7 @@ dependencies {
 
     implementation 'com.github.aakira:expandable-layout:1.6.0@aar'
 
-//    ====================================================================================
+//    ===================================================================================
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.android.support:cardview-v7:28.0.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
@@ -45,6 +45,7 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
     //otpview
     implementation 'com.github.GoodieBag:Pinview:v1.4'
+    implementation 'com.google.android.play:core:1.6.1'
 
     implementation 'com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar'
     implementation 'io.reactivex:rxandroid:1.2.1'

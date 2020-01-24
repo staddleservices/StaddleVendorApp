@@ -95,8 +95,8 @@ public class AcceptedListActivity extends AppCompatActivity {
             create_date.setText(getIntent().getStringExtra("CREATE_DATE"));
             date_booking.setText("DATE : "+getIntent().getStringExtra("DATE"));
             booking_time.setText("Time : "+getIntent().getStringExtra("TIME"));
-            Toast.makeText(this, getIntent().getStringExtra("DISCOUNT"), Toast.LENGTH_LONG).show();
-            Toast.makeText(this, getIntent().getStringExtra("TOTAL"), Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, getIntent().getStringExtra("DISCOUNT"), Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, getIntent().getStringExtra("TOTAL"), Toast.LENGTH_LONG).show();
             order_id_action.setText("#"+getIntent().getStringExtra("ORDER_ID"));
             user_id=getIntent().getStringExtra("UID");
             complete_order_btn.setOnSlideCompleteListener(new SlideToActView.OnSlideCompleteListener() {
@@ -195,7 +195,7 @@ public class AcceptedListActivity extends AppCompatActivity {
                             for (int i = 0; i < jsonArray.length(); i++) {
 
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                Toast.makeText(AcceptedListActivity.this, jsonObject.getString("status"), Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(AcceptedListActivity.this, jsonObject.getString("status"), Toast.LENGTH_SHORT).show();
                                 if(jsonObject.getString("status").equals("verified")){
                                     completeOrder(order_id);
                                 }else{

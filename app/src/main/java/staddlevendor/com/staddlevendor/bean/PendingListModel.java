@@ -30,6 +30,7 @@ public class PendingListModel {
     private String promocode;
     private String promodiscount;
     private String completeaddress;
+    private String items;
 
     public String getPromocode() {
         return promocode;
@@ -239,5 +240,13 @@ public class PendingListModel {
 
     public void setSubcat(String subcat) {
         this.subcat = subcat;
+    }
+
+    public String getItems() {
+        return items;
+    }
+
+    public void setItems(String items) {
+        this.items = items;
     }
 }

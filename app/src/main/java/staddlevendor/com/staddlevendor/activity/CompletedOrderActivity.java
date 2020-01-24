@@ -90,8 +90,8 @@ public class CompletedOrderActivity extends AppCompatActivity {
             create_date.setText(getIntent().getStringExtra("CREATE_DATE"));
             date_booking.setText("DATE : "+getIntent().getStringExtra("DATE"));
             booking_time.setText("Time : "+getIntent().getStringExtra("TIME"));
-            Toast.makeText(this, getIntent().getStringExtra("DISCOUNT"), Toast.LENGTH_LONG).show();
-            Toast.makeText(this, getIntent().getStringExtra("TOTAL"), Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, getIntent().getStringExtra("DISCOUNT"), Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, getIntent().getStringExtra("TOTAL"), Toast.LENGTH_LONG).show();
             order_id_action.setText("#"+getIntent().getStringExtra("ORDER_ID"));
             user_id=getIntent().getStringExtra("UID");
 

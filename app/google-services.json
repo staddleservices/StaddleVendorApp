@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "884709929324-thdl0bcf1p5lj26dsv7q9aaaoth9rnos.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "staddlevendor.com.staddlevendor",
+            "certificate_hash": "7f0844aa9729761f938d1223a287b3f8277b844f"
+          }
+        },
+        {
+          "client_id": "884709929324-r903llh0gckd8l8ldu7g1k54eqg4eaug.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "staddlevendor.com.staddlevendor",
+            "certificate_hash": "a252e75ec3853ba017c11df321e291e25f7e7012"
+          }
+        },
+        {
           "client_id": "884709929324-2c5fugqh8cparsmetqsqgajvkiu8iq7c.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

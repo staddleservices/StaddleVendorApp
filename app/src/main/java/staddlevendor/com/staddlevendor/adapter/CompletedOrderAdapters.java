@@ -99,7 +99,8 @@ public class CompletedOrderAdapters extends RecyclerView.Adapter<CompletedOrderA
             float totalPrice = tot - comm;
             myViewHolder.order_total.setText("  ₹ " + totalPrice);
             myViewHolder.order_time.setText(pendingListModel.getBooked_date() + " | " + pendingListModel.getBooking_slot());
-            myViewHolder.order_id.setText(pendingListModel.getId());
+            myViewHolder.order_id.setText("#"+pendingListModel.getId());
+            myViewHolder.itemsx.setText(pendingListModel.getItems()+" Item");
 
 //            if (image == null || image.equalsIgnoreCase("")) {
 //                myViewHolder.iv_offer_image.setImageResource(R.drawable.ic_launcher_background);
