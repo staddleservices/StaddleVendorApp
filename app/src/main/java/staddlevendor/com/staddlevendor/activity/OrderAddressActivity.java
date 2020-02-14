@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,6 +52,19 @@ public class OrderAddressActivity extends AppCompatActivity {
     private ApiInterface apiInterface;
     String user_number;
 
+    RelativeLayout layout_Totalprice;
+    RelativeLayout layout_VendorDeiscount;
+    RelativeLayout layout_PromoCode;
+    RelativeLayout layout_Topay;
+
+    TextView layout_Totalprice_txt;
+    TextView layout_VendorDeiscount_txt;
+    TextView layout_PromoCode_txt;
+    TextView layout_Topay_txt;
+    TextView layout_Promo_name_txt;
+    TextView layout_vendor_discount_per_txt;
+    TextView layout_topay_amount_methods;
+
 
 
     @SuppressLint("SetTextI18n")
@@ -71,9 +85,33 @@ public class OrderAddressActivity extends AppCompatActivity {
             orderList = getIntent().getParcelableArrayListExtra("DATALIST");
             Log.e("DATALIST",orderList.get(0).getMenu_name());
 
-            tv_item_total.setText("₹ " + getIntent().getStringExtra("TOTAL"));
+            if(getIntent().getStringExtra("DISCOUNT_PRICE").equals("0") || getIntent().getStringExtra("DISCOUNT_PRICE").equals("0.0")){
+                layout_VendorDeiscount.setVisibility(View.GONE);
+
+            }else{
+                layout_VendorDeiscount.setVisibility(View.VISIBLE);
+                layout_VendorDeiscount_txt.setText("₹ "+getIntent().getStringExtra("DISCOUNT_PRICE"));
+                layout_vendor_discount_per_txt.setText(getIntent().getStringExtra("DISCOUNT")+" % Off");
+            }
+            if(getIntent().getStringExtra("PROMONAME").equals("")){
+                layout_PromoCode.setVisibility(View.GONE);
+            }else{
+                layout_PromoCode.setVisibility(View.VISIBLE);
+                layout_PromoCode_txt.setText("₹ "+getIntent().getStringExtra("PROMOCUTOFF"));
+                layout_Promo_name_txt.setText(getIntent().getStringExtra("PROMONAME"));
+            }
+            if(getIntent().getStringExtra("PAYMENT").equals("cash")){
+                layout_topay_amount_methods.setText("Due ");
+            }else{
+                layout_topay_amount_methods.setText("Paid Online");
+            }
+            layout_Totalprice_txt.setText("₹ "+getIntent().getStringExtra("TOTAL_PRICE"));
+            layout_Topay_txt.setText("₹ "+getIntent().getStringExtra("TOTAL"));
+
+
+            //tv_item_total.setText("₹ " + getIntent().getStringExtra("TOTAL_PRICE"));
             //txt_percentage.setText("₹ " + getIntent().getStringExtra("DISCOUNT_PRICE"));
-            txt_overallTotalprice.setText("₹ " + getIntent().getStringExtra("PRICE"));
+            //txt_overallTotalprice.setText("₹ " + getIntent().getStringExtra("TOTAl"));
             name_customer.setText( getIntent().getStringExtra("NAME"));
             contact_info.setText("Contact : " + getIntent().getStringExtra("CONTACT")+" | "+ getIntent().getStringExtra("CONTACT_EMAIL"));
             user_number=getIntent().getStringExtra("CONTACT");
@@ -95,17 +133,17 @@ public class OrderAddressActivity extends AppCompatActivity {
 
 //            txt_percentage.setText(getIntent().getStringExtra("DISCOUNT"));
 //            txt_overallTotalprice.setText(getIntent().getStringExtra("TOTAL"));
-            if(getIntent().getStringExtra("PROMONAME")!=null){
-                promocode_layout.setVisibility(View.VISIBLE);
-                promocode.setText(getIntent().getStringExtra("PROMONAME"));
-                promocutoff.setText(getIntent().getStringExtra("PROMOCUTOFF"));
-            }
+//            if(getIntent().getStringExtra("PROMONAME")!=null){
+//                promocode_layout.setVisibility(View.VISIBLE);
+//                promocode.setText(getIntent().getStringExtra("PROMONAME"));
+//                promocutoff.setText(getIntent().getStringExtra("PROMOCUTOFF"));
+//            }
 
 
 
-            rvShopping.setHasFixedSize(true);
-            rvShopping.setLayoutManager(new LinearLayoutManager(this));
-            orderMenuAdapter = new OrderMenuAdapter(this, orderList);
+
+
+            orderMenuAdapter = new OrderMenuAdapter(OrderAddressActivity.this, orderList);
             rvShopping.setAdapter(orderMenuAdapter);
             orderMenuAdapter.notifyDataSetChanged();
 
@@ -144,13 +182,26 @@ public class OrderAddressActivity extends AppCompatActivity {
         date_booking = findViewById(R.id.date_booking);
         booking_time = findViewById(R.id.booking_time);
         booking_address = findViewById(R.id.booking_address);
-        tv_item_total = findViewById(R.id.tv_item_total);
-        txt_percentagename = findViewById(R.id.txt_percentagename);
-        txt_overallTotalprice = findViewById(R.id.txt_overallTotalprice);
-        promocode = findViewById(R.id.promoname);
-        promocutoff = findViewById(R.id.promo_cutoff);
-        promocode_layout = findViewById(R.id.promocode_layout);
+//        tv_item_total = findViewById(R.id.tv_item_total);
+//        txt_percentagename = findViewById(R.id.txt_percentagename);
+//        txt_overallTotalprice = findViewById(R.id.txt_overallTotalprice);
+//        promocode = findViewById(R.id.promoname);
+//        promocutoff = findViewById(R.id.promo_cutoff);
+//        promocode_layout = findViewById(R.id.promocode_layout);
         confirm_order_btn = findViewById(R.id.confirm_order_btn);
+        layout_Totalprice = findViewById(R.id.layout_totalprice);
+        layout_VendorDeiscount = findViewById(R.id.layout_vendorDiscount);
+        layout_PromoCode = findViewById(R.id.layout_Promocode);
+        layout_Topay = findViewById(R.id.layout_topay_amount);
+        layout_Totalprice_txt = findViewById(R.id.layout_totalprice_txt);
+        layout_VendorDeiscount_txt = findViewById(R.id.layout_vendorDiscount_txt);
+        layout_PromoCode_txt = findViewById(R.id.layout_Promocode_txt);
+        layout_Topay_txt = findViewById(R.id.layout_topay_amount_txt);
+        layout_vendor_discount_per_txt = findViewById(R.id.layout_vendorDiscount_per_txt);
+        layout_Promo_name_txt = findViewById(R.id.layout_Promocode_name_txt);
+        layout_topay_amount_methods = findViewById(R.id.layout_topay_amount_methods);
+        rvShopping.setLayoutManager(new LinearLayoutManager(OrderAddressActivity.this));
+        rvShopping.setHasFixedSize(true);
     }
 
 //    private void completeOrder(String id) {

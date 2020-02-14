@@ -28,7 +28,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/margin_5"
             android:layout_toEndOf="@id/iv_back"
-            android:text="@string/add_menu"
+            android:text="Total Sales"
             android:fontFamily="@font/mainboldfont"
             android:textColor="@color/white"
             android:textSize="15dp" />
@@ -62,9 +62,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_10"
                 android:layout_weight="1.5"
+                android:fontFamily="@font/mainthinfont"
                 android:background="@drawable/shape_order_out_line"
                 android:padding="@dimen/padding_7"
-                android:text="@string/total_cod"
+                android:text="Cash"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/txt_size_18" />
 
@@ -78,6 +79,7 @@
                 android:layout_weight="0.5"
                 android:background="@drawable/ordered_shap"
                 android:gravity="center"
+                android:fontFamily="@font/mainthinfont"
                 android:padding="@dimen/padding_7"
                 android:text="@string/amt"
                 android:textColor="@android:color/white"
@@ -101,7 +103,7 @@
                 android:layout_weight="1.5"
                 android:background="@drawable/shape_order_out_line"
                 android:padding="@dimen/padding_7"
-                android:text="@string/total_pay"
+                android:text="Online"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/txt_size_18" />
 
@@ -112,6 +114,7 @@
                 android:layout_marginEnd="@dimen/margin_5"
                 android:layout_marginStart="@dimen/margin_5"
                 android:layout_marginTop="@dimen/margin_10"
+                android:fontFamily="@font/mainthinfont"
                 android:layout_weight="0.5"
                 android:background="@drawable/ordered_shap"
                 android:gravity="center"

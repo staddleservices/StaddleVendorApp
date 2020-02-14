@@ -27,6 +27,7 @@ import staddlevendor.com.staddlevendor.activity.AcceptedListActivity;
 import staddlevendor.com.staddlevendor.activity.CompletedOrderActivity;
 import staddlevendor.com.staddlevendor.activity.PendingListActivity;
 import staddlevendor.com.staddlevendor.activity.ProductListActivity;
+import staddlevendor.com.staddlevendor.activity.ViewOrderActivity;
 import staddlevendor.com.staddlevendor.bean.AcceptedListModel;
 import staddlevendor.com.staddlevendor.bean.CompletedOrderList;
 import staddlevendor.com.staddlevendor.retrofitApi.ApiClient;
@@ -94,10 +95,10 @@ public class CompletedOrderAdapters extends RecyclerView.Adapter<CompletedOrderA
 
             myViewHolder.payment_mode.setText("on " + pendingListModel.getPayment());
             myViewHolder.from_user.setText("from " + user_name);
-            float tot = Float.parseFloat(pendingListModel.getOrder_price());
-            float comm = Float.parseFloat(pendingListModel.getDiscount());
-            float totalPrice = tot - comm;
-            myViewHolder.order_total.setText("  ₹ " + totalPrice);
+//            float tot = Float.parseFloat(pendingListModel.getOrder_price());
+//            float comm = Float.parseFloat(pendingListModel.getDiscount());
+//            float totalPrice = tot - comm;
+            myViewHolder.order_total.setText("  ₹ " + pendingListModel.getTotal_price());
             myViewHolder.order_time.setText(pendingListModel.getBooked_date() + " | " + pendingListModel.getBooking_slot());
             myViewHolder.order_id.setText("#"+pendingListModel.getId());
             myViewHolder.itemsx.setText(pendingListModel.getItems()+" Item");
@@ -129,13 +130,13 @@ public class CompletedOrderAdapters extends RecyclerView.Adapter<CompletedOrderA
             myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(mContext, CompletedOrderActivity.class);
+                    Intent intent = new Intent(mContext, ViewOrderActivity.class);
                     intent.putParcelableArrayListExtra("DATALIST", completedOrderLists.get(position).getData());
                     intent.putExtra("TAG", tag);
                     intent.putExtra("ID", completedOrderLists.get(position).getId());
                     intent.putExtra("TOTAL", completedOrderLists.get(position).getOrder_price());
-                    intent.putExtra("DISCOUNT_PRICE", completedOrderLists.get(position).getDiscount());
-                    intent.putExtra("PRICE", completedOrderLists.get(position).getDiscount_price());
+                    intent.putExtra("DISCOUNT", completedOrderLists.get(position).getDiscount());
+                    intent.putExtra("DISCOUNT_PRICE", completedOrderLists.get(position).getDiscount_price());
                     intent.putExtra("NAME", completedOrderLists.get(position).getUser_name());
                     intent.putExtra("ORDER_ID", completedOrderLists.get(position).getId());
                     intent.putExtra("CREATE_DATE", completedOrderLists.get(position).getCreate_date());
@@ -145,6 +146,8 @@ public class CompletedOrderAdapters extends RecyclerView.Adapter<CompletedOrderA
                     intent.putExtra("PROMOCUTOFF", completedOrderLists.get(position).getPromodiscount());
                     intent.putExtra("UID", completedOrderLists.get(position).getUid());
                     intent.putExtra("ADDRESS",completedOrderLists.get(position).getCompleteaddress());
+                    intent.putExtra("PAYMENT",completedOrderLists.get(position).getPayment());
+                    intent.putExtra("TOTAL_PRICE",completedOrderLists.get(position).getTotal_price());
                     intent.putExtra("STATUS", completedOrderLists.get(position).getStatus());
 
 //                    if (!pendingListModelArrayList.get(position).getState().equals(""))

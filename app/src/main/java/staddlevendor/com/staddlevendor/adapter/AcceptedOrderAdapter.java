@@ -101,10 +101,10 @@ public class AcceptedOrderAdapter extends RecyclerView.Adapter<AcceptedOrderAdap
 
             myViewHolder.payment_mode.setText("on "+pendingListModel.getPayment());
             myViewHolder.from_user.setText("from "+user_name);
-            float tot = Float.parseFloat(pendingListModel.getOrder_price());
-            float comm = Float.parseFloat(pendingListModel.getDiscount());
-            float totalPrice = tot - comm;
-            myViewHolder.order_total.setText("  ₹ " + totalPrice);
+//            float tot = Float.parseFloat(pendingListModel.getOrder_price());
+//            float comm = Float.parseFloat(pendingListModel.getDiscount());
+//            float totalPrice = tot - comm;
+            myViewHolder.order_total.setText("  ₹ " + pendingListModel.getTotal_price());
             myViewHolder.order_time.setText(pendingListModel.getBooked_date()+" | "+pendingListModel.getBooking_slot());
             myViewHolder.order_id.setText("#"+pendingListModel.getId());
             myViewHolder.itemsx.setText(pendingListModel.getItems()+" Item");
@@ -141,8 +141,8 @@ public class AcceptedOrderAdapter extends RecyclerView.Adapter<AcceptedOrderAdap
                     intent.putExtra("TAG", tag);
                     intent.putExtra("ID", pendingListModelArrayList.get(position).getId());
                     intent.putExtra("TOTAL", pendingListModelArrayList.get(position).getOrder_price());
-                    intent.putExtra("DISCOUNT_PRICE", pendingListModelArrayList.get(position).getDiscount());
-                    intent.putExtra("PRICE", pendingListModelArrayList.get(position).getDiscount_price());
+                    intent.putExtra("DISCOUNT", pendingListModelArrayList.get(position).getDiscount());
+                    intent.putExtra("DISCOUNT_PRICE", pendingListModelArrayList.get(position).getDiscount_price());
                     intent.putExtra("NAME", pendingListModelArrayList.get(position).getUser_name());
                     intent.putExtra("ORDER_ID",pendingListModelArrayList.get(position).getId());
                     intent.putExtra("CREATE_DATE",pendingListModelArrayList.get(position).getCreate_date());
@@ -151,6 +151,8 @@ public class AcceptedOrderAdapter extends RecyclerView.Adapter<AcceptedOrderAdap
                     intent.putExtra("PROMONAME",pendingListModelArrayList.get(position).getPromocode());
                     intent.putExtra("PROMOCUTOFF",pendingListModelArrayList.get(position).getPromodiscount());
                     intent.putExtra("UID",pendingListModelArrayList.get(position).getUid());
+                    intent.putExtra("PAYMENT",pendingListModelArrayList.get(position).getPayment());
+                    intent.putExtra("TOTAL_PRICE",pendingListModelArrayList.get(position).getTotal_price());
                     intent.putExtra("STATUS",pendingListModelArrayList.get(position).getStatus());
 
 //                    if (!pendingListModelArrayList.get(position).getState().equals(""))

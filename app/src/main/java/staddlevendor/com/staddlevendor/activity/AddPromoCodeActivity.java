@@ -88,9 +88,8 @@ public class AddPromoCodeActivity extends AppCompatActivity implements AdapterVi
         final Button add=(Button) formElementsView.findViewById(R.id.add_promo_btn);
         final EditText vendor_password = (EditText) formElementsView.findViewById(R.id.vendor_password);
         final TextView cancel_promo_btn = (TextView) formElementsView.findViewById(R.id.promo_cancel_btn);
-        final Spinner spinner_types = (Spinner) formElementsView.findViewById(R.id.promo_type_spinner) ;
-        spinner_types.setAdapter(new CustomSpinnerAdapter(AddPromoCodeActivity.this, R.layout.spinneritemlayout, methods));
-        spinner_types.setOnItemSelectedListener(this);
+        final EditText max_uses = (EditText) formElementsView.findViewById(R.id.max_uses);
+
 
         cancel_promo_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,10 +105,11 @@ public class AddPromoCodeActivity extends AppCompatActivity implements AdapterVi
                 String ApplicableAmount = mprice.getText().toString();
                 String descriptionentered = description.getText().toString();
                 String password = vendor_password.getText().toString();
-                if(password.equals("") || promonameentered.equals("") || promovalueentered.equals("") || ApplicableAmount.equals("") || descriptionentered.equals("") || promo_type_selected.equals("")){
+                String max_use = max_uses.getText().toString();
+                if(max_use.equals("") || password.equals("") || promonameentered.equals("") || promovalueentered.equals("") || ApplicableAmount.equals("") || descriptionentered.equals("") ){
                     Toast.makeText(AddPromoCodeActivity.this, "Please fill all details", Toast.LENGTH_SHORT).show();
                 }else{
-                    addpromo_db(password,promonameentered,promovalueentered,ApplicableAmount,descriptionentered,promo_type_selected);
+                    addpromo_db(password,promonameentered,promovalueentered,ApplicableAmount,descriptionentered,max_use);
                 }
             }
         });
@@ -123,7 +123,7 @@ public class AddPromoCodeActivity extends AppCompatActivity implements AdapterVi
         quantAlert.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
     }
 
-    private void addpromo_db(final String password, final String promonameentered, final String promovalueentered, final String applicableAmount, final String descriptionentered, final String promo_type_selected) {
+    private void addpromo_db(final String password, final String promonameentered, final String promovalueentered, final String applicableAmount, final String descriptionentered, final String max_use) {
 
 
         StringRequest stringRequest=new StringRequest(Request.Method.POST, ADD_COUPONS,
@@ -167,7 +167,7 @@ public class AddPromoCodeActivity extends AppCompatActivity implements AdapterVi
                 params.put("description",descriptionentered);
                 params.put("promo_value",promovalueentered);
                 params.put("minimum_price",applicableAmount);
-                params.put("promo_type",promo_type_selected);
+                params.put("max_uses",max_use);
                 params.put("password",password);
 
 
